@@ -1,0 +1,13 @@
+{
+  "service": "payments-api",
+  "version": "2.14.0",
+  "healthy": true,
+  "replicas": 3,
+  "owner": null,
+  "description": "This service handles all incoming payment requests from the mobile application and forwards them to the bank gateway.",
+  "endpoints": [
+    {"path": "/pay", "method": "POST", "auth": true},
+    {"path": "/status", "method": "GET", "auth": false}
+  ],
+  "limits": {"rps": 500, "timeout_ms": 3000}
+}

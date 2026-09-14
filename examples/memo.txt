@@ -1,0 +1,9 @@
+Hi team, here is a quick update on the Atlas migration project.
+
+As of yesterday we have moved approximately 80 percent of the customer data to the new database cluster in Frankfurt. The remaining twenty percent is mostly archived records from before 2015, which we plan to migrate over the weekend.
+
+There is one significant problem: the nightly backup job takes about six hours instead of the expected two, because the compression step runs on a single thread. If we cannot fix this by Thursday, we will have to postpone the cutover to the following week. Marta is looking into a multi-threaded implementation, and she believes it could reduce the time by at least 60%.
+
+Please do not deploy anything to production until the backup issue is resolved. The budget for the whole project is 45,000 euros and we have spent 31,000 so far, so we are still fine.
+
+Tom

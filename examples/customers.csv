@@ -1,0 +1,4 @@
+id,name,country,active,notes
+1,Anna Kowalska,Poland,true,"Prefers to be contacted by email in the morning"
+2,John Smith,United States,false,
+3,Marie Dubois,France,yes,"Has not paid the invoice from last month yet"

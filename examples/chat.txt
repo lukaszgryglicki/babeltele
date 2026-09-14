@@ -1,0 +1,4 @@
+User: Can you tell me why the deployment failed last night?
+Assistant: The deployment failed because the database migration script timed out after ten minutes. The table had about forty million rows and there was no index on the column being updated.
+User: What do you suggest we do?
+Assistant: I suggest adding the index first, in a separate migration, and then running the update in batches of one hundred thousand rows.

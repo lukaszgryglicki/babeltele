@@ -1,0 +1,10 @@
+Cześć wszystkim,
+
+Chciałem przekazać krótką aktualizację dotyczącą projektu migracji. Na dzień wczorajszy przenieśliśmy około 80 procent danych klientów do nowego klastra bazodanowego we Frankfurcie. Pozostałe dwadzieścia procent to głównie zarchiwizowane rekordy sprzed 2015 roku, które planujemy zmigrować w weekend.
+
+Jest jeden poważny problem: nocne zadanie kopii zapasowej trwa około sześciu godzin zamiast oczekiwanych dwóch, ponieważ etap kompresji działa na jednym wątku. Jeżeli nie naprawimy tego do czwartku, będziemy musieli przesunąć przełączenie na następny tydzień. Marta sprawdza implementację wielowątkową i uważa, że mogłaby skrócić czas o co najmniej 60%.
+
+Proszę nie wdrażać niczego na produkcję, dopóki problem z kopią zapasową nie zostanie rozwiązany. Dajcie znać, jeśli macie jakieś pytania.
+
+Pozdrawiam,
+Tomek

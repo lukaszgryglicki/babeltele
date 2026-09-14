@@ -1,0 +1,21 @@
+# Rust build output
+/target
+**/*.rs.bk
+*.pdb
+*.profraw
+
+# local tooling
+/.venv
+__pycache__/
+*.pyc
+
+# never commit secrets
+*.secret
+
+# editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# the prebuilt static FreeBSD binary in bin/ IS tracked on purpose

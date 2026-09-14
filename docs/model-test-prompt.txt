@@ -1,0 +1,40 @@
+You receive three documents written in a compressed machine-oriented notation (a mix of English, other languages, math/logic symbols and emoji). Decode them silently and answer the questions. Output ONLY the answers, one per line, formatted exactly as "Q1: answer", "Q2: answer", ... Keep each answer under 15 words. Do not add anything else.
+
+=== DOCUMENT A (a memo) ===
+Hi👥,here速update@Atlas migration proj
+@昨日we移~80%客data新DB cluster@Frankfurt; remaining 20%=mostly archived records前2015,which we計画migrate over weekend
+∃one❗問題: nightly backup job takes ~6h vs expected 2,∵compression step runs@single thread; ?we ¬可🔧此≤Thu⇒we将必postpone cutover following週; Marta looking multi-threaded impl,she believes it可📉時≥60%
+pls ¬🚀anything prod until backup issue✅;予算4∀proj=€45,000&we spent 31,000已,∴we still✅
+Tom
+
+=== DOCUMENT B (a server log) ===
+03-11 09:14:02ℹ server始@port 8080
+09:14:03ℹ connected DB@db-prod-1:5432
+09:15:41⚠ req took longer than expected: 2350ms path=/pay user=4412
+09:15:42❌ reach🏦gateway: connection timed out後3000ms ×3
+09:15:50ℹ circuit breaker開4gateway,retrying@30s
+03-12 00:00:01🐛 rotating log📄
+
+=== DOCUMENT C (a service config) ===
+service:payments-api
+version:2.14.0
+healthy:✅
+replicas:3
+owner:∅
+description:"此役務handles ∀incoming支払requests📱app&forwards them🏦gateway"
+endpoints:[path,method,auth]:(/pay,POST,✅)(/status,GET,❌)
+limits:{rps:500,timeout_ms:3000}
+
+=== QUESTIONS ===
+Q1: In document A, what percentage of the customer data has already been migrated, and where is the new database cluster?
+Q2: In document A, how long does the nightly backup currently take and how long was it expected to take?
+Q3: In document A, why is the backup slow?
+Q4: In document A, what happens if the problem is not fixed by Thursday?
+Q5: In document A, who is working on the fix and by how much does she expect to reduce the time?
+Q6: In document A, are deployments to production currently allowed? Answer yes or no and give the condition.
+Q7: In document A, what is the total budget and how much has been spent?
+Q8: In document B, how many times did the bank gateway error occur at 09:15:42 and what was the timeout?
+Q9: In document B, on which port did the server start and which database host did it connect to?
+Q10: In document B, what happened at 09:15:50?
+Q11: In document C, is the service healthy, how many replicas does it have, and who is the owner?
+Q12: In document C, which endpoints require authentication and which do not?

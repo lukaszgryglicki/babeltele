@@ -1,0 +1,8 @@
+2024-03-11 09:14:02 INFO  server started on port 8080
+2024-03-11 09:14:03 INFO  connected to database at db-prod-1:5432
+2024-03-11 09:15:41 WARN  request took longer than expected: 2350ms path=/pay user=4412
+2024-03-11 09:15:42 ERROR failed to reach bank gateway: connection timed out after 3000ms
+2024-03-11 09:15:42 ERROR failed to reach bank gateway: connection timed out after 3000ms
+2024-03-11 09:15:42 ERROR failed to reach bank gateway: connection timed out after 3000ms
+2024-03-11 09:15:50 INFO  circuit breaker opened for gateway, retrying in 30 seconds
+2024-03-12 00:00:01 DEBUG rotating log files

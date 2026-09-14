@@ -1,0 +1,40 @@
+You receive three documents written in a compressed machine-oriented notation (a mix of English, other languages, math/logic symbols and emoji). Decode them silently and answer the questions. Output ONLY the answers, one per line, formatted exactly as "Q1: answer", "Q2: answer", ... Keep each answer under 15 words. Do not add anything else.
+
+=== DOCUMENT A (a memo) ===
+Hi team, here quick update @ Atlas migration proj
+@ yesterday we moved ~80% customer data new DB cluster @ Frankfurt; remaining twenty percent = mostly archived records before 2015, which we plan migrate over weekend
+one significant problem: nightly backup job takes ~ six hours vs expected two, because compression step runs @ single thread; ? we cannot fix this ≤ Thu ⇒ we will必 postpone cutover following week; Marta looking multi-threaded impl, she believes it could reduce time ≥60%
+pls not deploy anything prod until backup issue resolved; budget for whole proj =€45,000 & we spent 31,000已, so we still fine
+Tom
+
+=== DOCUMENT B (a server log) ===
+03-11 09:14:02 INFO server started @ port 8080
+09:14:03 INFO connected DB @ db-prod-1:5432
+09:15:41 WARN req took longer than expected: 2350ms path=/pay user=4412
+09:15:42 ERROR failed reach bank gateway: connection timed out after 3000ms ×3
+09:15:50 INFO circuit breaker opened for gateway, retrying @30s
+03-12 00:00:01 DEBUG rotating log files
+
+=== DOCUMENT C (a service config) ===
+service:payments-api
+version:2.14.0
+healthy:true
+replicas:3
+owner:null
+description:"This service handles all incoming payment requests mobile app & forwards them bank gateway"
+endpoints:[path,method,auth]:(/pay,POST,true)(/status,GET,false)
+limits:{rps:500,timeout_ms:3000}
+
+=== QUESTIONS ===
+Q1: In document A, what percentage of the customer data has already been migrated, and where is the new database cluster?
+Q2: In document A, how long does the nightly backup currently take and how long was it expected to take?
+Q3: In document A, why is the backup slow?
+Q4: In document A, what happens if the problem is not fixed by Thursday?
+Q5: In document A, who is working on the fix and by how much does she expect to reduce the time?
+Q6: In document A, are deployments to production currently allowed? Answer yes or no and give the condition.
+Q7: In document A, what is the total budget and how much has been spent?
+Q8: In document B, how many times did the bank gateway error occur at 09:15:42 and what was the timeout?
+Q9: In document B, on which port did the server start and which database host did it connect to?
+Q10: In document B, what happened at 09:15:50?
+Q11: In document C, is the service healthy, how many replicas does it have, and who is the owner?
+Q12: In document C, which endpoints require authentication and which do not?
