@@ -9,7 +9,10 @@
 use std::io::Write;
 use std::process::{Command, Stdio};
 
-/// System prompt from the BabelTele paper, Appendix C.1 (arXiv:2606.19857).
+/// System prompt quoted from Appendix C.1 of "Large Language Models Do Not
+/// Always Need Readable Language" by Jiayi Zhu, Haoxuan Peng, Junxi Wang,
+/// Liang Ke, Chen Zhang and Linfeng Zhang (arXiv:2606.19857), published under
+/// CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>.
 pub const PROMPT: &str = "your task: compress verbose human text into minimal Token sequence. Audience ≠ human, but another equally intelligent LLM.\n\
 Core Directive\n\
 Omnilingual: ignore single-language grammar; traverse all human languages (Chinese, English, German compounds, Japanese Kanji, Latin roots, etc.), pick highest info-density words.\n\
