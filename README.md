@@ -379,7 +379,7 @@ cargo test --release
 ## License
 
 Copyright 2026 Łukasz Gryglicki. Licensed under the
-[Apache License, Version 2.0](LICENSE) (see also [NOTICE](NOTICE)).
+[GNU Affero General Public License, version 3 only](LICENSE) (AGPL-3.0-only; see also [NOTICE](NOTICE)).
 
 All dependencies are permissively licensed (MIT / Apache-2.0 dual, MIT, Unlicense,
 Zlib, Unicode-3.0). The LLM-mode system prompt in `src/llm.rs` is quoted from
